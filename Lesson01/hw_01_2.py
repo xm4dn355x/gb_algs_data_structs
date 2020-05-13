@@ -36,7 +36,7 @@ def input_coordinates():
     return res, True
 
 
-def linear_equation(a_x, a_y, b_x, b_y):
+def linear_equation(a_x, a_y, b_x, b_y) -> str:
     """
     Принимает координаты двух точек и вычисляет уравнение прямой, которую можно описать через эти точки.
 
@@ -64,7 +64,7 @@ def linear_equation(a_x, a_y, b_x, b_y):
         return 'У обоих точек одинаковые координаты'
 
 
-def print_result(coords, type_check_flag):
+def print_result(coords: list, type_check_flag: bool):
     """
     Получает список координат и результат проверки типов. Если пользователь ввёл валидные данные, то запускает
     вычисление уравнения прямой и выводит результат в консоль, а если нет, то сообщает, что пользователь ошибся
