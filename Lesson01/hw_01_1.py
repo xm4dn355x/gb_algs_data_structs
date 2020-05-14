@@ -18,9 +18,11 @@ if __name__ == '__main__':
     # Два числа
     a = 5
     b = 6
+
     # Их двоичной представление
     print(f'Двоичное представление 5 = {bin(a)}')
     print(f'Двоичное представление 6 = {bin(b)}')
+
     # Логические операции
     bit_or = a | b
     bit_and = a & b
@@ -29,6 +31,7 @@ if __name__ == '__main__':
     bit_not_b = ~ b
     bit_shift_left = a << 2
     bit_shift_right = a >> 2
+
     # Вывод в консоль этой красоты
     print()
     print(f"Результат побитового OR:\t {bin(bit_or)}\t {bit_or}")
