@@ -32,8 +32,8 @@ def input_coordinates():
             try:
                 res.append(float(coord))
             except ValueError:
-                return res, False
-    return res, True
+                return False
+    return res
 
 
 def linear_equation(a_x, a_y, b_x, b_y) -> str:
@@ -64,7 +64,7 @@ def linear_equation(a_x, a_y, b_x, b_y) -> str:
         return 'У обоих точек одинаковые координаты'
 
 
-def print_result(coords: list, type_check_flag: bool):
+def print_result(coords):
     """
     Получает список координат и результат проверки типов. Если пользователь ввёл валидные данные, то запускает
     вычисление уравнения прямой и выводит результат в консоль, а если нет, то сообщает, что пользователь ошибся
@@ -73,16 +73,15 @@ def print_result(coords: list, type_check_flag: bool):
     :param coords: list Список координат
     :param type_check_flag: bool Соответствуют-ли типы введенных пользователем данных числовым.
     """
-    if type_check_flag == True:
-        print(f'\nТочка А: ({coords[0]}:{coords[1]}), Точка Б: ({coords[2]}:{coords[3]})')
-        print(linear_equation(coords[0], coords[1], coords[2], coords[3]))
-    else:
+    if coords == False:
         print('\nВы должны были ввести целое число, либо десятичную дробь.\nВ качестве разделителя десятичной дроби '
               'используется точка, например 5.0')
+    else:
+        print(f'\nТочка А: ({coords[0]}:{coords[1]}), Точка Б: ({coords[2]}:{coords[3]})')
+        print(linear_equation(coords[0], coords[1], coords[2], coords[3]))
 
 
 if __name__ == '__main__':
     print('Lesson 1 task 2\n')
-    coords, type_check_flag = input_coordinates()
-    print_result(coords, type_check_flag)
+    print_result(input_coordinates())
 
