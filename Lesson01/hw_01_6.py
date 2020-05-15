@@ -56,7 +56,7 @@ def check_triangle(sides):
         else:
             res = res + ' и является раЗносторонним'
         if sides[0]**2 + sides[1]**2 == sides[2]**2:
-            res = res + ' , а так же прямоугольным.'
+            res = res + ', а так же прямоугольным.'
     else:
         res = res + 'не существует'
     return res
